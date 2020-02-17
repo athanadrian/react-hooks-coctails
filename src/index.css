@@ -249,7 +249,9 @@ Cocktails List
 Cocktail 
 ======
 */
-
+.cocktail-section {
+  text-align: center;
+}
 .cocktail {
   background: var(--mainWhite);
   margin-bottom: 2rem;
@@ -310,4 +312,56 @@ Cocktail
   .drink-info {
     padding-top: 0;
   }
+}
+/* 
+====== 
+Form
+======
+*/
+.form {
+  width: var(--smallWidth);
+  margin: 0 auto;
+  max-width: var(--maxWidth);
+}
+
+.search-form {
+  background: var(--mainWhite);
+  padding: 1.25rem 1rem;
+  text-transform: capitalize;
+  border-radius: var(--mainBorderRadius);
+  box-shadow: var(--lightShadow);
+}
+
+.form-control label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primaryColor);
+}
+.form-control input {
+  width: 100%;
+  border: none;
+  border: 2px solid var(--darkGrey);
+  border-radius: var(--mainBorderRadius);
+  padding: 0.5rem;
+  font-size: 1.2rem;
+}
+.form-control legend {
+  padding: 10px 0;
+}
+.form-control fieldset {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 20px 0;
+}
+.radio-label {
+  width: 25%;
+  display: inline-flex !important;
+}
+input[type="radio"] {
+  width: 5%;
+  justify-content: center;
+}
+.section-wrap {
+  text-align: center;
 }

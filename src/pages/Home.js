@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Search from "../components/Search";
 import CocktailList from "../components/CocktailsList.js";
-const baseUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
+const baseUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?";
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("br");
+  const [searchTerm, setSearchTerm] = useState("a");
+  const [searchOption, setSearchOption] = useState("s");
   const [cocktails, setCocktails] = useState([]);
 
   const getCocktails = async () => {
     try {
-      const response = await fetch(`${baseUrl}${searchTerm}`);
+      const response = await fetch(`${baseUrl}${searchOption}=${searchTerm}`);
       const data = await response.json();
       const { drinks } = data;
       if (drinks) {
@@ -40,6 +41,16 @@ const Home = () => {
     setLoading(false);
   };
 
+  const handleSearchOption = option => {
+    if (option === "name") {
+      setSearchOption("s");
+    } else if (option === "letter") {
+      setSearchOption("f");
+    } else {
+      setSearchOption("i");
+    }
+  };
+
   useEffect(() => {
     setLoading(true);
     getCocktails();
@@ -48,11 +59,13 @@ const Home = () => {
     //   fetch(`${baseUrl}${searchTerm}`)
     //     .then(response => response.json())
     //     .then(data => setCocktails(data));
-  }, [searchTerm]);
-  console.log(cocktails);
+  }, [searchTerm, searchOption]);
   return (
     <main>
-      <Search setSearchTerm={setSearchTerm} />
+      <Search
+        setSearchTerm={setSearchTerm}
+        handleSearchOption={handleSearchOption}
+      />
       <CocktailList loading={loading} cocktails={cocktails} />
     </main>
   );

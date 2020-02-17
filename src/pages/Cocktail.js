@@ -59,8 +59,6 @@ const Cocktail = props => {
     getCocktailById();
   }, [id]);
 
-  console.log(cocktail);
-
   return (
     <>
       {loading ? (
