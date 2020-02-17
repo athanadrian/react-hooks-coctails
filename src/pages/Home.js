@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Search from "../components/Search";
 import CocktailList from "../components/CocktailsList.js";
 const baseUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
-//const { drinks } = require("../data/drinks");
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
@@ -35,7 +34,6 @@ const Home = () => {
       } else {
         console.log("NO DRINKS: ", 0);
       }
-      //setCocktails(drinks);
     } catch (error) {
       console.log("Server error: ", error);
     }
