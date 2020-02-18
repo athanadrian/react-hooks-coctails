@@ -32,7 +32,7 @@ const Search = ({ setSearchTerm, handleSearchOption }) => {
             type="text"
             name="name"
             id="name"
-            placeholder="searching cocktails starting with a"
+            placeholder="search cocktails"
             onChange={handleSearch}
             ref={searchRef}
           />
