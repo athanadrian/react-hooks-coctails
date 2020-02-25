@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 
-const Search = ({ setSearchTerm, handleSearchOption }) => {
+const Search = ({ setSearchTerm }) => {
   const [searchOption, setSearchOption] = useState("");
   const searchRef = useRef("");
 
@@ -12,13 +12,13 @@ const Search = ({ setSearchTerm, handleSearchOption }) => {
     e.preventDefault();
   };
 
-  const handleRadioChange = e => {
-    setSearchOption(e.target.value);
-  };
+  // const handleRadioChange = e => {
+  //   setSearchOption(e.target.value);
+  // };
 
   const handleSearch = e => {
     //setSearchTerm(e.target.value);
-    handleSearchOption(searchOption);
+    //handleSearchOption(searchOption);
     setSearchTerm(searchRef.current.value);
   };
 
@@ -36,7 +36,7 @@ const Search = ({ setSearchTerm, handleSearchOption }) => {
             onChange={handleSearch}
             ref={searchRef}
           />
-          <fieldset>
+          {/* <fieldset> 
             <legend>Search By</legend>
             <div className="section-wrap">
               <input
@@ -70,7 +70,7 @@ const Search = ({ setSearchTerm, handleSearchOption }) => {
                 first letter
               </label>
             </div>
-          </fieldset>
+          </fieldset> */}
         </div>
       </form>
     </section>
